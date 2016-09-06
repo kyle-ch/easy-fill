@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+	<title>
+		Information
+	</title>
+	 <style>
+    #left
+    {
+      width: 200px;
+      float: left;
+    }
+
+    #right
+    {
+      margin-left: 200px;
+
+    .clear
+    {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+	<div id="container">
+		<form id="autofill info">
+			<div id="left">
+				First name: <br>
+				<input type="text" id="firstname"><br>
+				Last name: <br>
+				<input type="text" id="lastname"><br>
+				Address: <br>
+				<input type="text" id="address"><br>
+				Apartment (if applicable): <br>
+				<input type="text" id="apt"><br>
+				State: (ex: NY) <br>
+				<input type="text" id="state"><br>
+				Zipcode: <br>
+				<input type="text" id="zipcode"><br>
+				City: <br>
+				<input type="text" id="city"><br>
+				Phone: <br>
+				<input type="text" id="phone"><br>
+				Email: <br>
+				<input type="text" id="email"><br>
+			</div>
+			<div id="right">
+				*Your information can only be accessed by your Google account*<br>
+				*Only you will have access to the info you put into this form*<br>
+				Credit Card Number: <br>
+				<input type="text" id="CCNumber"><br>
+				Expiration Date (MM) <input type="text" id="ExpMonth"> (YY) <input type="text" id="ExpYear"><br>
+				CCV: <br>
+				<input type="text" id="CCV"><br>
+				*For Supreme*
+				<select id="supremecard">
+					<option value="visa">Visa</option>
+					<option value="american_express">American Express</option>
+					<option value="master">Mastercard</option>
+				</select>
+			</div>
+		</form>
+		<p id="selectedcard">Selected Card: </p>
+		<button id="save">Save</button>
+		<p id="saved"></p>
+		</div>
+		<div id="links"> Stores:<br>
+		<a href="http://www.footlocker.com">Footlocker</a>
+		<a href="http://www.eastbay.com">Eastbay</a>
+		<a href="http://www.champssports.com">Champs</a>
+		<a href="http://www.finishline.com">Finish Line</a>
+		<a href="http://www.footaction.com">Footaction</a>
+		<a href="http://www.supremenewyork.com">Supreme</a>
+	<script src="options.js"> </script>
+</body>

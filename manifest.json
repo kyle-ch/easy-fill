@@ -1,0 +1,37 @@
+{
+	"manifest_version": 2, 
+	"name": "Easy Fill",
+	"version": "1",
+	"description": "Quickly checkout at your favorite online stores with Easy Fill.
+	 Easy Fill fills in your information at checkout to ensure you get all the rarest drops.",
+	"browser_action": {
+		"default_title": "autofill",
+		"default_popup": "options.html"
+	},
+	 "content_scripts": [
+		{
+		"matches": [
+			"*://*.eastbay.com/checkout/*",
+			"*://*.footlocker.com/checkout*",
+			"*://*.footaction.com/checkout/*",
+			"*://*.champssports.com/checkout/*", 
+			"*://*.finishline.com/store/checkout/*",
+			"*://*.supremenewyork.com/checkout/*"
+			],
+		"js": ["autofill.js"]
+		}
+	],
+	"options_page": "options.html",
+	"permissions": [
+		"storage",
+		"tabs",
+		"activeTab",
+        "*://*.footlocker.com/*",
+        "*://*.eastbay.com/*",
+        "*://*.footaction.com/*",
+        "*://*.champssports.com/*",
+        "*://*.finshline.com/*",
+        "*://*.supremenewyork.com/*"
+	]
+}
+	
