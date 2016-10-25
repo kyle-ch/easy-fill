@@ -15,6 +15,10 @@ var cardtype;
 
 var required = {fname, lname, street, state, zipcode, city, phone, email};
 
+function fill(id, value) {
+	document.getElementById(id).value = value;
+}
+
 function autofill() {
 	if (window.location.toString().indexOf("footlocker") != -1
 		|| window.location.toString().indexOf("eastbay") != -1
@@ -33,86 +37,86 @@ function autofill() {
 function fillBillingAddress(site) {
 	if (site == "flocker") {
 		// fill fname
-		document.getElementById("billFirstName").value = fname;
+		fill("billFirstName", fname);
 		// fill lname
-		document.getElementById("billLastName").value = lname;
+		fill("billLastName", lname);
 		// fill street
-		document.getElementById("billAddress1").value = street;
+		fill("billAddress1", street);
 		// fill apt/unit
 		if (apt !== "") {
-			document.getElementById("billAddress2").value = apt;
+			fill("billAddress2", apt);
 		}
 		// fill zipcode
-		document.getElementById("billPostalCode").value = zipcode;
+		fill("billPostalCode", zipcode);
 		// fill city
-		document.getElementById("billCity").value = city;
+		fill("billCity", city);
 		// fill state
-		document.getElementById("billState").value = state;
+		fill("billState", state);
 		// fill phone
-		document.getElementById("billHomePhone").value = phone;
+		fill("billHomePhone", phone);
 		// fill email
-		document.getElementById("billEmailAddress").value = email;
-		document.getElementById("billConfirmEmail").value = email;
+		fill("billEmailAddress", email);
+		fill("billConfirmEmail", email);
 		window.setTimeout(function(){document.getElementById("billPaneContinue").click()}, 1000);
 		window.setTimeout(function(){document.getElementById("shipMethodPaneContinue").click()}, 3000);
 		window.setTimeout(function(){
 			if (ccnumber != "") {
-				document.getElementById("CardNumber").value = ccnumber;
-				document.getElementById("CardExpireDateMM").value = ccmonth;
-				document.getElementById("CardExpireDateYY").value = ccyear;
-				document.getElementById("CardCCV").value = ccv;
+				fill("CardNumber", ccnumber);
+				fill("CardExpireDateMM", ccmonth);
+				fill("CardExpireDateYY", ccyear);
+				fill("CardCCV", ccv);
 			}
 		}, 4500);
 		window.setTimeout(function(){document.getElementById("payMethodPaneContinue").click()}, 5000);
 	}
 	else if (site == "sup") {
 		// fill fname + lname
-		document.getElementById("order_billing_name").value = fname + " " + lname;
+		fill("order_billing_name", fname + " " + lname);
 		// fill email
-		document.getElementById("order_email").value = email;
+		fill("order_email", email);
 		// fill tel
-		document.getElementById("order_tel").value = phone;
+		fill("order_tel", phone);
 		// fill address
-		document.getElementById("bo").value = street;
+		fill("bo", street);
 		// fill apt if applicable
 		if (apt !== "") {
-			document.getElementById("oba3").value = apt;
+			fill("oba3", apt);
 		}
 		// fill zip
-		document.getElementById("order_billing_zip").value = zipcode;
+		fill("order_billing_zip", zipcode);
 		// fill city 
-		document.getElementById("order_billing_city").value = city;
+		fill("order_billing_city", city);
 		// fill state
-		document.getElementById("order_billing_state").value = state;
+		fill("order_billing_state", state);
 		if (ccnumber != "") {
-			document.getElementById("cnb").value = ccnumber;
-			document.getElementById("credit_card_month").value = ccmonth;
-			document.getElementById("credit_card_year").value = "20" + ccyear;
-			document.getElementById("vval").value = ccv;
-			document.getElementById("credit_card_type").value = cardtype;
+			fill("cnb", ccnumber);
+			fill("credit_card_month", ccmonth);
+			fill("credit_card_year", "20" + ccyear);
+			fill("vval", ccv);
+			fill("credit_card_type", cardtype);
 		}	
 	}
 	else if (site == "fline") {
 		// fill fname
-		document.getElementById("firstName").value = fname;
+		fill("firstName", name);
 		// fill lname
-		document.getElementById("shippingLastName").value = lname;
+		fill("shippingLastName", lname);
 		// fill street
-		document.getElementById("shippingAddress1").value = street;
+		fill("shippingAddress1", street);
 		// fill apt/unit
 		if (apt !== "") {
-			document.getElementById("shippingAddress2").value = apt;
+			fill("shippingAddress2", apt);
 		}
 		// fill city
-		document.getElementById("shippingCity").value = city;
+		fill("shippingCity", city);
 		// fill state
-		document.getElementById("shippingState").value = state;
+		fill("shippingState", state);
 		// fill zipcode
-		document.getElementById("shippingZip").value = zipcode;
+		fill("shippingZip", zipcode);
 		// fill phone
-		document.getElementById("shippingPhone").value = phone;
+		fill("shippingPhone", phone);
 		// fill email
-		document.getElementById("email").value = email;
+		fill("email", email);
 		window.setTimeout(function(){document.getElementById("shippingContinue").click()}, 1000);
 		// FINISH BILLING
 	}
